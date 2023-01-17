@@ -6,6 +6,7 @@ import com.attornatus.peopleapi.repositories.AddressRepository;
 import com.attornatus.peopleapi.services.exceptions.DatabaseException;
 import com.attornatus.peopleapi.services.exceptions.ResourceNotFoundException;
 import jakarta.annotation.Nullable;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -14,14 +15,12 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+@AllArgsConstructor
 @Service
 public class AddressService {
 
     @Autowired
     AddressRepository repository;
-
-    @Autowired
-    PersonService personService;
 
     public List<Address> findAll(Long id) {
         Optional<List<Address>> obj = repository.findAllByPersonId(id);

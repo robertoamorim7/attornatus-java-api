@@ -5,6 +5,7 @@ import com.attornatus.peopleapi.repositories.PersonRepository;
 import com.attornatus.peopleapi.services.exceptions.DatabaseException;
 import com.attornatus.peopleapi.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+@AllArgsConstructor
 @Service
 public class PersonService {
 
